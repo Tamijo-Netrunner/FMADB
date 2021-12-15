@@ -64,6 +64,7 @@
 			$cardPack = $row['Pack'];
 			$cardNumber = $row['Code'];
 			$cardName = $row['Name'];
+			$subName = "";
 			if ($row['Subname'] != "") $subName  = $row['Subname'];
 			$cardFaction = $row['Faction'];
 			$cardType = $row['Card_type'];

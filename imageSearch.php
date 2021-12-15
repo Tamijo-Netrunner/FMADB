@@ -43,6 +43,8 @@
 					$cardPack = $row['Pack'];
 					$cardNumber = $row['Code'];
 					$cardName = $row['Name'];
+					$subName = "";
+					if ($row['Subname'] != "") $subName  = $row['Subname'];
 					$cardFaction = $row['Faction'];
 					$cardType = $row['Card_type'];
 					$cardRarity = $row['Rarity'];
@@ -51,9 +53,9 @@
 			<!--Displays those results-->
 			<div class ="card-grid-item" data-card-id="<?php echo $cardCode ?>">
 				<a class="card-grid-item-card" href="card.php?Card_code=<?php echo $cardCode ?>">
-					<span class="card-grid-item-invisible-label" aria-hidden="true"><?php echo $cardName ?></span>
+					<span class="card-grid-item-invisible-label" aria-hidden="true"><?php echo $cardName; if ($subName != ""){echo ", ".$subName;} ?></span>
 					<div class="card-grid-item-front">
-						<img class="card" alt="<?php echo $cardName ?>" title="<?php echo $cardName ?>" src="<?php echo $cardImagePath ?>">
+						<img class="card" alt="<?php echo $cardName ?>" title="<?php echo $cardName; if ($subName != ""){echo ", ".$subName;} ?>" src="<?php echo $cardImagePath ?>">
 					</div>
 				</a>
 			</div>
